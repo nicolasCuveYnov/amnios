@@ -24,6 +24,7 @@ class EstateAgent(models.Model):
     firstName = models.CharField(max_length=255)
     lastName = models.CharField(max_length=255)
     phoneNumber = models.CharField(max_length=10)
+    agency = models.ForeignKey(Agency, on_delete=models.CASCADE)
 
 
 class Estate(models.Model):
@@ -31,8 +32,9 @@ class Estate(models.Model):
     description = models.TextField()
     location = models.TextField()
     price = models.IntegerField()
-    date_added = models.DateField()
+    date_added = models.DateField(auto_now_add=True)
     date_dispo = models.DateField()
+    agency=models.ForeignKey(Agency, on_delete=models.CASCADE)
     seller = models.ForeignKey(Seller, on_delete=models.CASCADE)
 
 
