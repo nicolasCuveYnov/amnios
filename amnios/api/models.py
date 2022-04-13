@@ -9,21 +9,21 @@ class Agency(models.Model):
 
 class Seller(models.Model):
     name = models.CharField(max_length=255)
-    phoneNumber = models.CharField(max_length=10)
-    emailAdress = models.EmailField()
+    phone_number = models.CharField(max_length=10)
+    email_address = models.EmailField()
     agency = models.ForeignKey(Agency, on_delete=models.CASCADE)
 
 
 class Buyer(models.Model):
     name = models.CharField(max_length=255)
-    lastName = models.CharField(max_length=255)
-    phoneNumber = models.CharField(max_length=10)
+    last_name = models.CharField(max_length=255)
+    phone_number = models.CharField(max_length=10)
 
 
 class EstateAgent(models.Model):
-    firstName = models.CharField(max_length=255)
-    lastName = models.CharField(max_length=255)
-    phoneNumber = models.CharField(max_length=10)
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    phone_number = models.CharField(max_length=10)
 
 
 class Estate(models.Model):
@@ -32,7 +32,7 @@ class Estate(models.Model):
     location = models.TextField()
     price = models.IntegerField()
     date_added = models.DateField()
-    date_dispo = models.DateField()
+    date_available = models.DateField()
     seller = models.ForeignKey(Seller, on_delete=models.CASCADE)
 
 

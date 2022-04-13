@@ -5,10 +5,10 @@ from rest_framework.authtoken.views import obtain_auth_token
 
 router = DefaultRouter()
 router.register('agencies', AgencyViewSet, 'agency')
-router.register('selleres', SellerViewSet, 'seller')
+router.register('sellers', SellerViewSet, 'seller')
 router.register('buyers', BuyerViewSet, 'buyer')
 router.register('estate_agents', EstateAgentViewSet, 'estate_agent')
-router.register('estate', EstateViewSet, 'estate')
+router.register('estates', EstateViewSet, 'estate')
 router.register('visit_slots', VisitSlotViewSet, 'visit_slot')
 
 urlpatterns = [
