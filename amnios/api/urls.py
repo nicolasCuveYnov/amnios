@@ -14,5 +14,6 @@ router.register('visit_slots', VisitSlotViewSet, 'visit_slot')
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('authToken/', obtain_auth_token, name='authToken')  
+    path('authToken/', obtain_auth_token, name='authToken'),
+
 ]
